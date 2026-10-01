@@ -1,0 +1,16 @@
+# Paper SSSM settings. The checkpoint must contain a pretrained infrared
+# feature encoder; it is loaded and frozen during generation training.
+sssm:
+  weight: 1.0
+  checkpoint: null
+  input_size: 256
+  scale_weights: [1.0, 0.5, 0.25, 0.125, 0.125]
+
+# Geometry is sampled once per registered visible/infrared pair. Photometric
+# jitter is modality-specific and does not alter token coordinates.
+augmentation:
+  paired_random_crop: false
+  paired_flip_probability: 0.0
+  paired_rotation_degrees: 0.0
+  visible_brightness_jitter: 0.0
+  infrared_brightness_jitter: 0.0
